@@ -1,9 +1,9 @@
 import styled from "@emotion/styled";
-import { Button, TextField, Typography } from '@mui/material';
-import Dialog from '@mui/material/Dialog';
+import {Button,TextField,Typography,Dialog} from '@mui/material';
 import { Box } from '@mui/system';
 import { useState } from "react";
 import { authsignUp ,authlogin} from "../../services/connect";
+
 let newUserData = {
     email: "",
     mobile: "",
@@ -31,18 +31,20 @@ const Login = ({ popUp, setopen }) => {
     }
 
     const handleSignUp = (e) => {
-        setSignUp({ ...singnUp, [e.target.name]: e.target.value })
+        setSignUp({...singnUp,[e.target.name]:e.target.value })
     }
+
     const signupUser=()=>{
      authsignUp(singnUp,setlogin)  
        
     }
 
     const handleLogin = (e) => {
-        setUserLogin({ ...userLogin, [e.target.name]: e.target.value })
+        setUserLogin({...userLogin,[e.target.name]:e.target.value })
     }
-    const loginUser=async()=>{
-       await authlogin(userLogin)
+
+    const loginUser=()=>{
+        authlogin(userLogin)
 
     }
 

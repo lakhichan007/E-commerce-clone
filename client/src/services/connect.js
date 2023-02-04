@@ -1,8 +1,11 @@
 import axios from "axios"
-const URL = `http://localhost:5401`
+import env from "react-dotenv"
+const URL= env.SERVER_URL //Backend server link.
+// const URL=`http://localhost:5401`
 
 export const authsignUp = (data, setlogin) => {
     try {
+
         if (data.email && data.mobile && data.password && data.confirm_password) {
             if (data.password === data.confirm_password) {
                 axios.post(`${URL}/signup`, data)
@@ -32,6 +35,7 @@ export const authsignUp = (data, setlogin) => {
 
 export const authlogin = (data) => {
     try {
+       
         if (data.email && data.password) {
 
             axios.post(`${URL}/login`, data)
