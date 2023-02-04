@@ -1,13 +1,14 @@
 
 
 const products= require("./Constants/data")
-const Mydata = require("./module/productsSchema")
+const {Products} = require("./module/Schema")
 
 const addProducts= async()=>{
     try{
-        let currentData= await Mydata.find().count()
+        let currentData= await Products.find().count()
+        // console.log(currentData)
         if(currentData===0){
-            await Mydata.create(products)
+            await Products.create(products)
         }
 
     }

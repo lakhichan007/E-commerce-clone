@@ -15,7 +15,7 @@ const Navbar=()=>{
         <>
         <NavbarBox>
             {navData.map(ele=>(
-                <Box>
+                <Box key={ele.id} >
                     <img src={ele.url} alt="img" style={{height:"64px",width:"64px"}}/>
                     <p style={{fontSize:"14px",marginTop:"1%",fontWeight:"bold"}}>{ele.text}</p>
                 </Box>
